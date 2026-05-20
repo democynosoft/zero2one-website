@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { NAV_LINKS } from "@/app/_data/navigation";
 import { Container } from "@/app/_components/ui/Container";
+import { CloseIcon } from "@/app/_components/ui/Icon";
 import { smoothScrollTo } from "@/app/_lib/smooth-scroll";
 
 import { MobileMenu } from "./MobileMenu";
@@ -14,6 +15,12 @@ export function Header() {
   const [hidden, setHidden] = useState(false);
   const [tinted, setTinted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    menuToggleRef.current?.focus();
+  }, [menuOpen]);
 
   useEffect(() => {
     let lastY = window.scrollY;
@@ -99,16 +106,23 @@ export function Header() {
           </a>
 
           <button
+            ref={menuToggleRef}
             type="button"
             className={styles.hamburger}
-            aria-label="Open menu"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
-            onClick={() => setMenuOpen(true)}
+            onClick={() => setMenuOpen((open) => !open)}
           >
-            <span />
-            <span />
-            <span />
+            {menuOpen ? (
+              <CloseIcon size={24} />
+            ) : (
+              <span className={styles.hamburgerBars} aria-hidden>
+                <span />
+                <span />
+                <span />
+              </span>
+            )}
           </button>
         </Container>
       </header>

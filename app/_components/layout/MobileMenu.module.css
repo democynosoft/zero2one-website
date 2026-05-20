@@ -14,15 +14,6 @@
   justify-content: center;
 }
 
-.close {
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  color: var(--color-text-secondary);
-  line-height: 1;
-  padding: 8px;
-}
-
 .nav {
   display: flex;
   flex-direction: column;
