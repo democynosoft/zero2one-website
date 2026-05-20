@@ -1,17 +1,7 @@
 "use server";
 
 import { SERVICE_OPTIONS } from "@/app/_data/contact";
-
-export type ContactState = {
-  status: "idle" | "success" | "error";
-  message: string;
-  errors?: Partial<Record<"fname" | "lname" | "email" | "message" | "service", string>>;
-};
-
-export const initialContactState: ContactState = {
-  status: "idle",
-  message: "",
-};
+import type { ContactState } from "@/app/_lib/contact-form";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -40,7 +30,9 @@ export async function submitContact(
   if (fname.length < 1) errors.fname = "Please enter your first name.";
   if (lname.length < 1) errors.lname = "Please enter your last name.";
   if (!EMAIL_RE.test(email)) errors.email = "Please enter a valid email.";
-  if (service && !SERVICE_OPTIONS.includes(service)) {
+  if (service.length < 1) {
+    errors.service = "Please select a service.";
+  } else if (!(SERVICE_OPTIONS as readonly string[]).includes(service)) {
     errors.service = "Please select a valid service.";
   }
   if (message.length < 10) {

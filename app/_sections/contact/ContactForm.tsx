@@ -6,7 +6,8 @@ import { useFormStatus } from "react-dom";
 import { Button } from "@/app/_components/ui/Button";
 import { ArrowRightIcon } from "@/app/_components/ui/Icon";
 import { SERVICE_OPTIONS } from "@/app/_data/contact";
-import { initialContactState, submitContact } from "@/app/_actions/contact";
+import { submitContact } from "@/app/_actions/contact";
+import { initialContactState } from "@/app/_lib/contact-form";
 
 import styles from "./ContactForm.module.css";
 
@@ -33,7 +34,7 @@ export function ContactForm() {
   const errors = state.errors ?? {};
 
   return (
-    <form action={formAction} className={styles.form} noValidate>
+    <form action={formAction} className={styles.form}>
       {/* Honeypot — hidden field that bots tend to fill */}
       <div className={styles.honeypot} aria-hidden>
         <label>
@@ -77,10 +78,13 @@ export function ContactForm() {
           id="service"
           name="service"
           defaultValue=""
+          required
           aria-invalid={Boolean(errors.service)}
           aria-describedby={errors.service ? "service-error" : undefined}
         >
-          <option value="">Select a service</option>
+          <option value="" disabled>
+            Select a service
+          </option>
           {SERVICE_OPTIONS.map((s) => (
             <option key={s} value={s}>
               {s}
