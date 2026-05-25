@@ -101,16 +101,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  /* width: 100%; */
+  aspect-ratio: 16 / 9;
 }
 
 .image {
   width: 100% !important;
-  height: auto !important;
-  max-height: 88vh;
-  border-radius: 20px;
+  height: 100% !important;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.8);
-  object-fit: contain;
+  object-fit: inherit;
 }
 
 .caption {
