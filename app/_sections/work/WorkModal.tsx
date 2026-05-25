@@ -71,9 +71,9 @@ export function WorkModal({ project, onClose }: Props) {
             <Image
               src={project.display}
               alt={`${project.title} project showcase`}
-              width={1920}
-              height={1080}
-              sizes="(max-width: 800px) 90vw, 960px"
+              width={3840}
+              height={2160}
+              sizes="(max-width: 500px) calc(100vw - 20px), (max-width: 768px) calc(100vw - 32px), (max-width: 1440px) calc(100vw - 48px), (max-width: 2560px) calc(100vw - 64px), calc(100vw - 80px)"
               className={styles.image}
               priority
             />
