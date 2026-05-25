@@ -31,7 +31,7 @@ export const PROJECTS: readonly Project[] = [
     ],
     preview: "/work/covers-preview.png",
     previewAlt: "Covers app redesign preview",
-    display: "/work/covers-display 1.png",
+    display: "/work/covers-display-2.png",
     gallery: [
       { src: "/work/galleries/covers/1.png" },
       { src: "/work/galleries/covers/2.png" },
@@ -54,7 +54,7 @@ export const PROJECTS: readonly Project[] = [
     ],
     preview: "/work/pando-preview.png",
     previewAlt: "Pando donations app preview",
-    display: "/work/pando-display 1.png",
+    display: "/work/pando-display-2.png",
     gallery: [
       { src: "/work/galleries/pando/1.png" },
       { src: "/work/galleries/pando/2.png" },
@@ -77,7 +77,7 @@ export const PROJECTS: readonly Project[] = [
     ],
     preview: "/work/halifax-preview.png",
     previewAlt: "Halifax Bridges website redesign preview",
-    display: "/work/halifax-display 1.png",
+    display: "/work/bridges-display-2.png",
     gallery: [
       { src: "/work/galleries/halifax/1.png", caption: "Mobile-first website redesign" },
       { src: "/work/galleries/halifax/2.png" },
@@ -100,7 +100,7 @@ export const PROJECTS: readonly Project[] = [
     ],
     preview: "/work/collab-preview.png",
     previewAlt: "Collab mobile app preview",
-    display: "/work/collab-display 1.png",
+    display: "/work/collab-display-2.png",
     gallery: [
       { src: "/work/galleries/collab/1.png" },
       { src: "/work/galleries/collab/2.png" },
