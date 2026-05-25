@@ -7,6 +7,7 @@ import { Container } from "@/app/_components/ui/Container";
 import { SectionLabel } from "@/app/_components/ui/SectionLabel";
 import { Tag } from "@/app/_components/ui/Tag";
 import { PROJECTS, type Project } from "@/app/_data/projects";
+import { useScrollRevealGroup } from "@/app/_lib/use-scroll-reveal";
 
 import { WorkModal } from "./WorkModal";
 import styles from "./Work.module.css";
@@ -20,6 +21,7 @@ const GRADIENT_CLASS: Record<Project["gradient"], string> = {
 
 export function Work() {
   const [openId, setOpenId] = useState<string | null>(null);
+  const gridRef = useScrollRevealGroup();
   const activeProject = openId
     ? PROJECTS.find((p) => p.id === openId) ?? null
     : null;
@@ -44,7 +46,7 @@ export function Work() {
         </p>
       </Container>
 
-      <Container className={styles.grid}>
+      <Container ref={gridRef} className={styles.grid}>
         {PROJECTS.map((project) => (
           <article key={project.id} className={styles.card}>
             <div className={[styles.visual, GRADIENT_CLASS[project.gradient]].join(" ")}>

@@ -102,16 +102,14 @@
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  overflow: hidden;
-  /* width: 100%; */
-  aspect-ratio: 16 / 9;
 }
 
 .image {
-  width: 100% !important;
-  height: 100% !important;
+  width: 90% !important;
+  height: auto !important;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.8);
-  object-fit: inherit;
+  object-fit: contain;
+  /* border-radius: 20px; */
 }
 
 .caption {
