@@ -9,6 +9,7 @@ export type Project = {
   stats: readonly ProjectStat[];
   preview: string;
   previewAlt: string;
+  display: string;
   /** Absolute paths from /public used by the modal gallery */
   gallery: readonly { src: string; caption?: string }[];
   /** Tailwind-safe gradient class applied to the card visual */
@@ -24,12 +25,13 @@ export const PROJECTS: readonly Project[] = [
     description:
       "Redesigned key sections of their site — including the data-heavy Scores and Matchups — to make complex stats easier to scan and navigate. An accessible, user-friendly experience with optimized load speed.",
     stats: [
-      { value: "1 mo", label: "Discovery & design" },
+      // { value: "1 mo", label: "Discovery & design" },
       { value: "100+", label: "User interviews" },
       { value: "UX", label: "Heuristics review" },
     ],
     preview: "/work/covers-preview.png",
     previewAlt: "Covers app redesign preview",
+    display: "/work/covers-display.png",
     gallery: [
       { src: "/work/galleries/covers/1.png" },
       { src: "/work/galleries/covers/2.png" },
@@ -52,6 +54,7 @@ export const PROJECTS: readonly Project[] = [
     ],
     preview: "/work/pando-preview.png",
     previewAlt: "Pando donations app preview",
+    display: "/work/pando-display.png",
     gallery: [
       { src: "/work/galleries/pando/1.png" },
       { src: "/work/galleries/pando/2.png" },
@@ -74,6 +77,7 @@ export const PROJECTS: readonly Project[] = [
     ],
     preview: "/work/halifax-preview.png",
     previewAlt: "Halifax Bridges website redesign preview",
+    display: "/work/halifax-display.png",
     gallery: [
       { src: "/work/galleries/halifax/1.png", caption: "Mobile-first website redesign" },
       { src: "/work/galleries/halifax/2.png" },
@@ -96,6 +100,7 @@ export const PROJECTS: readonly Project[] = [
     ],
     preview: "/work/collab-preview.png",
     previewAlt: "Collab mobile app preview",
+    display: "/work/collab-display.png",
     gallery: [
       { src: "/work/galleries/collab/1.png" },
       { src: "/work/galleries/collab/2.png" },

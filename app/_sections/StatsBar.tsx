@@ -14,7 +14,7 @@ export function StatsBar() {
     <aside className={styles.bar} aria-label="By the numbers">
       <Container as="div" className={styles.teaser}>
         <MapleLeafIcon size={22} className={styles.leaf} />
-        <span>Proudly Canadian — built in Canada, serving globally</span>
+        <span>built in Canada — serving globally</span>
       </Container>
       <Container ref={gridRef} className={styles.grid}>
         {STATS.map((stat) => (

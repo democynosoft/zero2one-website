@@ -41,8 +41,6 @@ export function WorkModal({ project, onClose }: Props) {
 
   if (!project) return null;
 
-  const slide = project.gallery[0];
-
   return (
     <div
       className={styles.backdrop}
@@ -64,27 +62,22 @@ export function WorkModal({ project, onClose }: Props) {
       </button>
 
       <h2 id="modal-title" className={styles.srTitle}>
-        {project.title} — project gallery
+        {project.title} — project display
       </h2>
 
       <div className={styles.inner}>
         <div className={styles.slide}>
           <div className={styles.imageWrap}>
             <Image
-              src={slide.src}
-              alt={
-                slide.caption
-                  ? `${project.title}: ${slide.caption}`
-                  : `${project.title} screenshot`
-              }
-              width={1600}
-              height={1200}
-              sizes="(max-width: 800px) 90vw, 780px"
+              src={project.display}
+              alt={`${project.title} project showcase`}
+              width={1920}
+              height={1080}
+              sizes="(max-width: 800px) 90vw, 960px"
               className={styles.image}
               priority
             />
           </div>
-          {slide.caption && <div className={styles.caption}>{slide.caption}</div>}
         </div>
       </div>
     </div>
