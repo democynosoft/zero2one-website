@@ -48,7 +48,7 @@
   align-items: center;
   justify-content: center;
   gap: 24px;
-  max-width: 1100px;
+  max-width: 90vw;
   width: 100%;
 }
 
@@ -59,7 +59,7 @@
   gap: 12px;
   flex: 1;
   min-width: 0;
-  max-width: 1100px;
+  max-width: 90vw;
   width: 100%;
 }
 
